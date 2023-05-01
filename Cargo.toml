@@ -1,0 +1,25 @@
+[package]
+name = "build-context"
+version = "0.1.0"
+edition = "2018"
+rust-version = "1.45"
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/taiki-e/build-context"
+keywords = []
+categories = []
+exclude = ["/.*", "/tools"]
+description = """
+Make build environment/target information available as constants in normal libraries and binaries.
+"""
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[workspace]
+
+[lib]
+doc-scrape-examples = false
+
+[dependencies]
+
+[dev-dependencies]
