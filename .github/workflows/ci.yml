@@ -66,8 +66,10 @@ jobs:
       - name: Install Rust
         run: rustup toolchain add ${{ matrix.rust }} --no-self-update && rustup default ${{ matrix.rust }}
       - run: rustup toolchain add nightly --no-self-update
+      - run: rustup target add thumbv6m-none-eabi
       - uses: taiki-e/install-action@cargo-hack
       - uses: taiki-e/install-action@cargo-minimal-versions
       - run: cargo test --workspace --all-features
       - run: cargo hack build --workspace --ignore-private --feature-powerset --no-dev-deps
+      - run: cargo build --target thumbv6m-none-eabi
       - run: cargo minimal-versions build --workspace --all-features --ignore-private
