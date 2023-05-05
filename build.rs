@@ -9,6 +9,7 @@ use std::{env, fs, path::PathBuf};
 //
 // NB: update README.md together when updating list.
 const NAMES: &[&str] = &[
+    "CARGO_CFG_PANIC",
     "CARGO_CFG_SANITIZE",
     "CARGO_CFG_TARGET_ARCH",
     "CARGO_CFG_TARGET_ENDIAN",

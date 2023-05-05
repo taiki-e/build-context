@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `CARGO_CFG_PANIC`.
+
 ## [0.1.0] - 2023-05-01
 
 Initial release
