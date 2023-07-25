@@ -6,7 +6,7 @@ rust-version = "1.45"
 license = "Apache-2.0 OR MIT"
 repository = "https://github.com/taiki-e/build-context"
 keywords = []
-categories = ["no-std"]
+categories = ["no-std", "no-std::no-alloc"]
 exclude = ["/.*", "/tools"]
 description = """
 Make build environment/target information available as constants in normal libraries and binaries.
