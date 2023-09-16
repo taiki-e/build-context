@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 use std::{env, fs, path::PathBuf};
 
 // Environment variables that have the same value in all crates built for TARGET

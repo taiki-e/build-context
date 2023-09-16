@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 use std::{env::consts as env, path::Path};
 
 use build_context::*;
