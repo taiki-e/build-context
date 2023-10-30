@@ -21,10 +21,6 @@ Some constants duplicate those provided in `std::env::consts`.
 ))]
 #![forbid(unsafe_code)]
 #![warn(
-    rust_2018_idioms,
-    single_use_lifetimes,
-    unreachable_pub,
-    clippy::pedantic,
     // Lints that may help when writing public library.
     missing_debug_implementations,
     missing_docs,

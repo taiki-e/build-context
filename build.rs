@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
-#![warn(rust_2018_idioms, single_use_lifetimes, clippy::pedantic)]
-
 use std::{env, fs, path::PathBuf};
 
 // Environment variables that have the same value in all crates built for TARGET
