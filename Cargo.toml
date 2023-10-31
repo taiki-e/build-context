@@ -22,8 +22,6 @@ allowed_external_types = []
 [lib]
 doc-scrape-examples = false
 
-[dependencies]
-
 [dev-dependencies]
 
 [lints]
