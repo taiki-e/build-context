@@ -22,7 +22,6 @@ Some constants duplicate those provided in `std::env::consts`.
 #![forbid(unsafe_code)]
 #![warn(
     // Lints that may help when writing public library.
-    missing_debug_implementations,
     missing_docs,
     clippy::alloc_instead_of_core,
     clippy::exhaustive_enums,
