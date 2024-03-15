@@ -7,7 +7,7 @@
 [![github actions](https://img.shields.io/github/actions/workflow/status/taiki-e/build-context/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/taiki-e/build-context/actions)
 
 <!-- tidy:crate-doc:start -->
-Make build environment/target information available as constants in normal libraries and binaries.
+Make [build environment/target information](https://doc.rust-lang.org/nightly/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts) available as constants in normal libraries and binaries.
 
 This is intended primarily for use in tests and its helpers. When used in libraries or binaries, be careful not to depend on constants that depend on the host environment.
 
