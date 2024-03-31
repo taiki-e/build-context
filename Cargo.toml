@@ -2,7 +2,7 @@
 name = "build-context"
 version = "0.1.1" #publish:version
 edition = "2018"
-rust-version = "1.45"
+rust-version = "1.31"
 license = "Apache-2.0 OR MIT"
 repository = "https://github.com/taiki-e/build-context"
 keywords = []

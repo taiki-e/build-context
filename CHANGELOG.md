@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Relax the minimum supported Rust version from Rust 1.45 to Rust 1.31.
+
 ## [0.1.1] - 2023-05-05
 
 - Support `CARGO_CFG_PANIC`.
