@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [0.1.2] - 2024-04-13
+
 - Relax the minimum supported Rust version from Rust 1.45 to Rust 1.31.
 
 ## [0.1.1] - 2023-05-05
@@ -20,6 +22,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/build-context/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/taiki-e/build-context/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/taiki-e/build-context/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/taiki-e/build-context/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/taiki-e/build-context/releases/tag/v0.1.0
