@@ -29,6 +29,7 @@ const NAMES: &[&str] = &[
 
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
+    println!(r#"cargo:rustc-check-cfg=cfg(host_os, values("windows"))"#);
 
     let out_dir: PathBuf = env::var_os("OUT_DIR").expect("OUT_DIR not set").into();
     let mut buf = String::new();
@@ -43,6 +44,11 @@ fn main() {
     }
     let path = &out_dir.join("build-context");
     fs::write(path, buf).unwrap_or_else(|e| panic!("failed to write {}: {}", path.display(), e));
+
+    let host = env::var("HOST").expect("HOST not set");
+    if host.contains("-windows") {
+        println!(r#"cargo:rustc-cfg=host_os="windows""#);
+    }
 }
 
 // str::strip_prefix requires Rust 1.45

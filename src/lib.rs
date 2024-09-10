@@ -33,4 +33,8 @@ Some constants duplicate those provided in `std::env::consts`.
     clippy::std_instead_of_core,
 )]
 
+// Use \ on Windows host to work around https://github.com/rust-lang/rust/issues/75075 / https://github.com/rust-lang/cargo/issues/13919.
+#[cfg(not(host_os = "windows"))]
 include!(concat!(env!("OUT_DIR"), "/build-context"));
+#[cfg(host_os = "windows")]
+include!(concat!(env!("OUT_DIR"), "\\build-context"));
