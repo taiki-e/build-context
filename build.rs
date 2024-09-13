@@ -32,7 +32,7 @@ const NAMES: &[&str] = &[
 
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
-    println!(r#"cargo:rustc-check-cfg=cfg(host_os, values("windows"))"#);
+    println!(r#"cargo:rustc-check-cfg=cfg(host_os,values("windows"))"#);
 
     let out_dir: PathBuf = env::var_os("OUT_DIR").expect("OUT_DIR not set").into();
     let mut buf = String::new();
