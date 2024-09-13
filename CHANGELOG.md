@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `CARGO_CFG_TARGET_ABI`, `CARGO_CFG_TARGET_FEATURE`, and `CARGO_CFG_TARGET_HAS_ATOMIC`.
+
 ## [0.1.2] - 2024-04-13
 
 - Relax the minimum supported Rust version from Rust 1.45 to Rust 1.31.
