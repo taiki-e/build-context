@@ -8,8 +8,6 @@ use std::{env, fs, path::PathBuf};
 //
 // See https://doc.rust-lang.org/nightly/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts
 // for available environment variables.
-//
-// NB: update README.md together when updating list.
 const NAMES: &[&str] = &[
     "CARGO_CFG_PANIC",
     "CARGO_CFG_SANITIZE",
