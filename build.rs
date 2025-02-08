@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
-use std::{env, fs, path::PathBuf};
+use std::{env, fmt::Write, fs, path::PathBuf};
 
 // Environment variables that have the same value in all crates built for TARGET
 // can be supported here; environment variables that have different values in
@@ -36,12 +36,13 @@ fn main() {
     let mut buf = String::new();
     for &name in NAMES {
         let var = env::var(name).unwrap_or_default();
-        buf.push_str(&format!(
+        let _ = write!(
+            buf,
             "/// `{}`\npub const {}: &str = r\"{}\";\n",
             name,
             strip_prefix(name, "CARGO_CFG_").unwrap_or(name),
             var
-        ));
+        );
     }
     let path = &out_dir.join("build-context");
     fs::write(path, buf).unwrap_or_else(|e| panic!("failed to write {}: {}", path.display(), e));
