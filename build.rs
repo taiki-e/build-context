@@ -56,9 +56,5 @@ fn main() {
 // str::strip_prefix requires Rust 1.45
 #[must_use]
 fn strip_prefix<'a>(s: &'a str, pat: &str) -> Option<&'a str> {
-    if s.starts_with(pat) {
-        Some(&s[pat.len()..])
-    } else {
-        None
-    }
+    if s.starts_with(pat) { Some(&s[pat.len()..]) } else { None }
 }
