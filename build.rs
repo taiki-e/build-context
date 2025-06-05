@@ -3,8 +3,9 @@
 use std::{env, fmt::Write, fs, path::PathBuf};
 
 // Environment variables that have the same value in all crates built for TARGET
-// can be supported here; environment variables that have different values in
-// each crate, such as CARGO_MANIFEST_DIR, cannot be supported.
+// can be supported here; environment variables that can have different values
+// in each crate, such as CARGO_MANIFEST_DIR and profiles (OPT_LEVEL/DEBUG),
+// cannot be supported.
 //
 // See https://doc.rust-lang.org/nightly/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts
 // for available environment variables.
