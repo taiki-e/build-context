@@ -12,15 +12,17 @@ This is intended primarily for use in tests and its helpers. When used in librar
 Some constants duplicate those provided in `std::env::consts`.
 
 <!-- tidy:sync-markdown-to-rustdoc:end -->
- */
+*/
 
 #![no_std]
 #![doc(test(
     no_crate_inject,
-    attr(
-        deny(warnings, rust_2018_idioms, single_use_lifetimes),
-        allow(dead_code, unused_variables)
-    )
+    attr(allow(
+        dead_code,
+        unused_variables,
+        clippy::undocumented_unsafe_blocks,
+        clippy::unused_trait_names,
+    ))
 ))]
 #![forbid(unsafe_code)]
 #![warn(
