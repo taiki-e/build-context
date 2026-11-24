@@ -14,24 +14,27 @@ use self::version::rustc_version;
 //
 // See https://doc.rust-lang.org/nightly/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts
 // for available environment variables.
+//
+// CARGO_CFG_TARGET_ABI may be changed to "string (comma-separated)" in the future:
+// https://github.com/rust-lang/rust/issues/80970#issuecomment-1877682716
 const NAMES: &[&str] = &[
-    "CARGO_CFG_PANIC",
-    "CARGO_CFG_SANITIZE",
-    "CARGO_CFG_TARGET_ABI",
-    "CARGO_CFG_TARGET_ARCH",
-    "CARGO_CFG_TARGET_ENDIAN",
-    "CARGO_CFG_TARGET_ENV",
-    "CARGO_CFG_TARGET_FAMILY",
-    "CARGO_CFG_TARGET_FEATURE",
-    "CARGO_CFG_TARGET_HAS_ATOMIC",
-    "CARGO_CFG_TARGET_OS",
-    "CARGO_CFG_TARGET_POINTER_WIDTH",
-    "CARGO_CFG_TARGET_VENDOR",
-    "CARGO",
-    "HOST",
-    "RUSTC",
-    "RUSTDOC",
-    "TARGET",
+    "CARGO_CFG_PANIC",                // string
+    "CARGO_CFG_SANITIZE",             // string (comma-separated)
+    "CARGO_CFG_TARGET_ABI",           // string
+    "CARGO_CFG_TARGET_ARCH",          // string
+    "CARGO_CFG_TARGET_ENDIAN",        // string
+    "CARGO_CFG_TARGET_ENV",           // string
+    "CARGO_CFG_TARGET_FAMILY",        // string (comma-separated)
+    "CARGO_CFG_TARGET_FEATURE",       // string (comma-separated)
+    "CARGO_CFG_TARGET_HAS_ATOMIC",    // string (comma-separated)
+    "CARGO_CFG_TARGET_OS",            // string
+    "CARGO_CFG_TARGET_POINTER_WIDTH", // string (int)
+    "CARGO_CFG_TARGET_VENDOR",        // string
+    "CARGO",                          // string (path)
+    "HOST",                           // string
+    "RUSTC",                          // string (path)
+    "RUSTDOC",                        // string (path)
+    "TARGET",                         // string
 ];
 
 fn main() {
