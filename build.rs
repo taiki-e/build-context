@@ -1,6 +1,11 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
-use std::{env, fmt::Write, fs, path::PathBuf};
+#[path = "src/build/version.rs"]
+mod version;
+
+use std::{env, fmt::Write, fs, path::PathBuf, str};
+
+use self::version::rustc_version;
 
 // Environment variables that have the same value in all crates built for TARGET
 // can be supported here; environment variables that can have different values
@@ -45,6 +50,27 @@ fn main() {
             var
         );
     }
+
+    let version = rustc_version().expect("failed to get rustc version");
+    let _ = write!(
+        buf,
+        "\
+        /// The rustc minor version of `$RUSTC` (major version is always 1).\n\
+        pub const RUSTC_MINOR_VERSION: u32 = {};\n\
+        /// `true` if `$RUSTC` is \"nightly\" or \"dev\" channel.\n\
+        pub const RUSTC_NIGHTLY: bool = {};\n\
+        /// The LLVM major version of `$RUSTC`.\n\
+        ///\n\
+        /// This is known to be `None` in rustc 1.49-1.50 (and 1.13 or older) that don't print LLVM version.\n\
+        pub const LLVM_MAJOR_VERSION: Option<u32> = \
+        ",
+        version.minor, version.nightly,
+    );
+    let _ = match version.llvm {
+        Some(llvm) => writeln!(buf, "Some({});", llvm),
+        None => writeln!(buf, "None;"),
+    };
+
     let path = &out_dir.join("build-context");
     fs::write(path, buf).unwrap_or_else(|e| panic!("failed to write {}: {}", path.display(), e));
 
