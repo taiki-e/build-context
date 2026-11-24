@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Add `RUSTC_MINOR_VERSION`, `RUSTC_NIGHTLY`, and `LLVM_MAJOR_VERSION`.
+
 ## [0.1.4] - 2026-02-27
 
 - Enable [release immutability](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/immutable-releases).

@@ -8,7 +8,7 @@
 
 <!-- tidy:sync-markdown-to-rustdoc:start:src/lib.rs -->
 
-Make [build environment/target information](https://doc.rust-lang.org/nightly/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts) available as constants in normal libraries and binaries.
+Make [build environment/target information](https://doc.rust-lang.org/nightly/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts) and rustc/LLVM versions available as constants in normal libraries and binaries.
 
 This is intended primarily for use in tests and its helpers. When used in libraries or binaries, be careful not to depend on constants that depend on the host build environment.
 
